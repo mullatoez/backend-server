@@ -1,5 +1,4 @@
 const app = require('express')();
-const port = 3000;
 const morgan = require('morgan');
 const mysql = require('mysql');
 const express = require('express');
@@ -44,6 +43,7 @@ app.get('/user_json', (req, res) => {
     res.json([userOne, userTwo])
 })
 
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`server is listening on port ${port}`);
